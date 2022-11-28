@@ -5,28 +5,28 @@ $sun = "";
 $k = strrev($n);
 function ddd($a , $b) {
    
-  for ($i=0; $i <= strlen($n); $i++){
- if ($n[$i] === $k[$i] ){
-   $sun .= $k[$i];
+  for ($i=0; $i <= strlen($a); $i++){
+ if ($a[$i] === $b[$i] ){
+  return 1;
  }
  else{
-   
-  break;
+  return 0;
+  
  }
 
 }
- return $sun ;
+ 
 }
 
 $ww=ddd($n, $k);
 echo var_dump($ww);
 
-// if($n==$sun)
-// {
-// echo "строка " . $n . " является палиндромом " ;
+if($ww==1)
+{
+echo "строка " . $n . " является палиндромом " ;
 
-// }
-// else{
-//    echo "строка " . $n . " НЕ является палиндромом ";  
-// }
+}
+else{
+   echo "строка " . $n . " НЕ является палиндромом ";  
+}
 
