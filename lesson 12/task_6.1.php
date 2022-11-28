@@ -1,7 +1,6 @@
 <?php
 
 $n = readline("Введите строку: ");
-$sun = "";
 $k = strrev($n);
 function ddd($a , $b) {
    
