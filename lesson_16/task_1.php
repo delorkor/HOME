@@ -1,5 +1,28 @@
 
+<style>
+     .user{
+        width: 800px;
+        min-height: 400px;
+        display: flex;
+    }
+     .user img{
 
+        width: 400px;
+     }
+table{
+        border: 1px solid red;
+        min-width: 1500px;
+        text-align:center;
+}
+ tr, td {
+        border: 1px solid red;
+
+}
+img{
+    width:100px;
+    
+}
+</style>
 <?php
  $serv = $_SERVER['REQUEST_URI'];
  $link= explode('/', $serv);
@@ -9,6 +32,7 @@ if($link[3]==""){
    
     echo '<a href="/lesson_16/task_1.php/User">User</a>'.PHP_EOL;
 }
+
 print_r($link);
 $arr_us=[
     'mih' => [
@@ -63,7 +87,7 @@ function users($arr) {
     foreach($arr as $pro => $value){
         echo '<tr>';
         //Переход на страницу пользователя
-        echo"<td><a href='/lesson_16/task_1.php/User/".$pro."'>".$pro."</a></td>";
+        echo"<td><a href='/lesson_16/task_1.php/User/".$value['num']."'>".$pro."</a></td>";
         echo"<td>".$value['num']."</td>";
         echo"<td>".$value['Name']."</td>";
         echo"<td>".$value['patronymic']."</td>";
@@ -85,7 +109,7 @@ if($link[3]=='User'){
 
 
 foreach($arr_us as $kay => $val){
-    if($link[4]===$kay){
+    if($link[4]===$val['num']){
         echo '<div class="user">';
         echo '<div class="text">';
         echo '<h2>Login: '.$kay.'</h2>';
@@ -101,7 +125,7 @@ foreach($arr_us as $kay => $val){
         echo '<img src="public/'.$val["NamImg"].'">';
         echo'</div>';
         echo '</div>';
-    
+    exit;
 
         
     }
@@ -113,23 +137,3 @@ foreach($arr_us as $kay => $val){
 
 
 
-<style>
-     .user{
-width: 800px;
-min-height: 400px;
-display: flex;
-    }
-     .user img{
-
-        width: 400px;
-     }
-table{
-border: 1px solid red;
-min-width: 1500px;
-text-align:center;
-}
-img{
-    width:100px;
-    
-}
-</style>
