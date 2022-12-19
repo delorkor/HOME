@@ -14,7 +14,7 @@ if(!empty($_GET['data'])){
     echo print_r($_COOKIE['daata']) . '<br>';
     echo print_r($date_x) . '<br>';
     echo'</pre>';
-    $data_B=mktime(0, 0, 0,  $date_x[2],  $date_x[1], $date_x[0]);
+    $data_B=mktime(0, 0, 0,  $date_x[1],  $date_x[2], $date_x[0]);
     if($_COOKIE['daata'][2] == $date_x[2] && $_COOKIE['daata'][1]  == $date_x[1]){
         $_COOKIE['text']='С днем рождения';
         echo $_COOKIE['text'] . '<br>';
